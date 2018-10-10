@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>CROWDFUND</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/responsive.css">
+		
+
+    </head>
+    <body>
+        
+		<!--================Header Menu Area =================-->
+		<header class="header_area">
+			<div class="main_menu" id="mainNav">
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						 aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="mach_learn.html">Machine Learning</a>
+									<li class="nav-item"><a class="nav-link" href="analysis.html">Analysis</a>
+										<li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h2>Machine Learning</h2>
+						<div class="page_link">
+							<a href="index.html">Home</a>
+							<a href="mach_learn.html">Machine Learning</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Post Slider Area =================-->
+        <section class="post_slider_area pad_top form_area">
+        	<div class="main_title">
+				<h2>Our Machine Learning Model</h2>
+				<p>Choose from the given categories which describe your project. Select subcategories and let our Machine Learning Models predict the probability of getting funded based on chosen categories.</p>
+			</div>
+		
+		
+			<div class="whole-wrap">
+				<div class="container center_form">
+					<h3 class="mb-30 title_color">Crowdfunding Categories</h3>
+					<form action="#">
+						
+						<div class="mt-10">
+							<input type="text" name="goal" placeholder="Funding Goal ($)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Funding Goal ($)'"
+							 required class="single-input">
+						</div>
+
+						<div class="mt-10">
+							<input type="text" name="bakers" placeholder="Number of Expected Backers" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number of Expected Backers'"
+							 required class="single-input">
+						</div>
+						
+						<div class="input-group-icon mt-10">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<div class="form-select" id="default-select">
+
+								<!--============= JS version-2 ============== -->
+								<!-- <select name="select1" id="select1"> -->
+
+								<select name="category1" id="category1">
+									<option value="0" selected>MAIN CATEGORY</option>
+									<option value="1">Art</option>
+									<option value="2">Comics</option>
+									<option value="3">Crafts</option>
+									<option value="4">Dance</option>
+									<option value="5">Design</option>
+									<option value="6">Fashion</option>
+									<option value="7">Film & Video</option>
+									<option value="8">Food</option>
+									<option value="9">Games</option>
+									<option value="10">Journalism</option>
+									<option value="11">Music</option>
+									<option value="12">Photography</option>
+									<option value="13">Publishing</option>
+									<option value="14">Technology</option>
+									<option value="15">Theater</option>
+								</select>	
+
+							</div>
+						</div>
+						<div class="input-group-icon mt-10">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<div class="form-select" id="default-select">
+
+								<!--============= JS version-2 ============== -->
+								<!-- <select name="select2" id="select2"> -->
+
+								<select class="subcat" id="category2" name="category2">
+									<option value="0" selected>SUBCATEGORY</option>
+								
+									<optgroup data-rel="Art">
+										<option value="1">Subcategory Art 1</option>
+										<option value="1">Subcategory Art 2</option>
+									</optgroup>
+								
+									<optgroup data-rel="Comics">
+										<option value="2">Subcategory Comics 1</option>
+										<option value="2">Subcategory Comics 2</option>
+									</optgroup>
+									
+									<optgroup data-rel="Crafts">
+										<option value="3">Subcategory Crafts 1</option>
+										<option value="3">Subcategory Crafts 2</option>
+									</optgroup>
+									
+									<optgroup data-rel="Dance">
+										<option value="4">Subcategory Dance 1</option>
+										<option value="4">Subcategory Dance 2</option>
+									</optgroup>
+								</select>
+
+							<!-- </div> -->
+						</div>
+					</form>
+					<br/>
+					<a class="main_btn" href="#">Get Prediction</a>
+
+					<div class="section-top-border">
+						<h3 class="mb-30 title_color">Outcome</h3>
+						<div class="row">
+							<div class="col-lg-12">
+								<blockquote class="generic-blockquote">
+									Here will be displayed an outcome "Funded or not Funded"
+								</blockquote>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+				
+
+        <!--================End Post Slider Area =================-->
+        
+		<!--================Footer Area =================-->
+		<footer class="footer_area p_50">
+			<div class="container">
+				<div class="text-faded text-center">
+					<div class="container">
+						<p>Copyright &copy; Crowdfund Inc. 2018</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--================End Footer Area =================-->
+        
+	
+		
+        <!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.js"></script>
+		<script src="js/theme.js"></script>
+		
+		<!--============= JS version-1 & version-2 ============== -->
+		<script type="text/javascript" src="js/select-html.js"></script>
+		
+
+    </body>
+</html>
