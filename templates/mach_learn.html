@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="../static/img/favicon.png" type="image/png">
+        <title>CROWDFUND</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../static/css/bootstrap.css">
+        <link rel="stylesheet" href="../static/vendors/linericon/style.css">
+        <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../static/vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="../static/vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="../static/vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="../static/vendors/animate-css/animate.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="../static/css/style.css">
+		<link rel="stylesheet" href="../static/css/responsive.css">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+
+		
+    </head>
+    <body>
+        
+		<!--================Header Menu Area =================-->
+		<header class="header_area">
+			<div class="main_menu" id="mainNav">
+				<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="/"><img src="../static/img/logo.png" alt=""></a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						 aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav ml-auto">
+								<li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
+								<li class="nav-item"><a class="nav-link" href="mach_learn">Machine Learning</a>
+									<li class="nav-item"><a class="nav-link" href="analysis">Analysis</a>
+										<li class="nav-item"><a class="nav-link" href="about-us">About</a></li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<!--================Header Menu Area =================-->
+        
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+						<h2>Machine Learning</h2>
+						<div class="page_link">
+							<a href="/">Home</a>
+							<a href="mach_learn">Machine Learning</a>
+						</div>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+        
+        <!--================Post Slider Area =================-->
+        <section class="post_slider_area pad_top form_area">
+        	<div class="main_title">
+				<h2>Our Machine Learning Model</h2>
+				<p>Choose from the given categories which describe your project. Select subcategories and let our Machine Learning Models predict the probability of getting funded based on chosen categories.</p>
+			</div>
+
+		
+			<div class="whole-wrap">
+				<div class="container center_form">
+					<h3 class="mb-30 title_color">Crowdfunding Categories</h3>
+					
+					<form id="asdf" onsubmit="return false" action="api/compute" method="POST">
+						<div class="mt-10">
+							<input type="text" name="fGoal" placeholder="Funding Goal ($)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Funding Goal ($)'"
+							required class="single-input">
+						</div>
+						<div class="mt-10">
+							<input type="text" name="fBacker" placeholder="Number of Backers" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Funding Goal ($)'"
+							required class="single-input">
+						</div>
+
+						<div class="input-group-icon mt-10 form-select">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fCategory" class="maincat" onclick="show()">
+								<option value="none" selected>MAIN CATEGORY</option>
+								<option id = "Art" value="Art" sub="artDiv">Art</option>
+								<option value="Comics">Comics</option>
+								<option value="Crafts">Crafts</option>
+								<option value="Dance">Dance</option>
+								<option value="Design">Design</option>
+								<option value="Fashion">Fashion</option>
+								<option value="Film">Film & Video</option>
+								<option value="Food">Food</option>
+								<option value="Games">Games</option>
+								<option value="Journalism">Journalism</option>
+								<option value="Music">Music</option>
+								<option value="Photography">Photography</option>
+								<option value="Publishing">Publishing</option>
+								<option value="Technology">Technology</option>
+								<option value="Theater">Theater</option>
+							</select>
+						</div>
+
+						<div class="input-group-icon mt-10 form-select artDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Art" class="subcat">
+								<option value="none" selected>ART SUB CATEGORY</option>
+								<option value="Public Art">Public Art</option>
+								<option value="Illustration">Illustration</option>
+								<option value="Art">Art</option>
+								<option value="Painting">Painting</option>
+								<option value="Performance Art">Performance Art</option>
+								<option value="Ceramics">Ceramics</option>
+								<option value="Sculpture">Sculpture</option>
+								<option value="Mixed Media">Mixed Media</option>
+								<option value="Digital Art">Digital Art</option>
+								<option value="Installations">Installations</option>
+								<option value="Conceptual Art">Conceptual Art</option>
+								<option value="Textiles">Textiles</option>
+								<option value="Video Art">Video Art</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select publishDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>	
+							<select name="fSub_Publishing" class="subcat">
+								<option value="none" selected>PUBLISHING SUB CATEGORY</option>
+								<option value="Poetry">Poetry</option>
+								<option value="Nonfiction">Nonfiction</option>
+								<option value="Art Books">Art Books</option>
+								<option value="Fiction">Fiction</option>
+								<option value="Publishing">Publishing</option>
+								<option value="Radio and Podcasts">Radio & Podcasts</option>
+								<option value="Periodicals">Periodicals</option>
+								<option value="Young Adult">Young Adult</option>
+								<option value="Anthologies">Anthologies</option>
+								<option value="Children's Books">Children's Books</option>
+								<option value="Calendars">Calendars</option>
+								<option value="Zines">Zines</option>
+								<option value="Academic">Academic</option>
+								<option value="Translations">Translations</option>
+								<option value="Comedy">Comedy</option>
+								<option value="Literary Journals">Literary Journals</option>
+								<option value="Literary Spaces">Literary Spaces</option>
+								<option value="Letterpress">Letterpress</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select filmDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Film" class="subcat">   
+								<option value="none" selected>FILM SUB CATEGORY</option>
+								<option value='Narrative Film'>Narrative Film</option>
+								<option value='Film and Video'>Film & Video</option>
+								<option value='Documentary'>Documentary</option>
+								<option value='Webseries'>Webseries</option>
+								<option value='Animation'>Animation</option>
+								<option value='Family'>Family</option>
+								<option value='Shorts'>Shorts</option>
+								<option value='Comedy'>Comedy</option>
+								<option value='Drama'>Drama</option>
+								<option value='Action'>Action</option>
+								<option value='Thrillers'>Thrillers</option>
+								<option value='Movie Theaters'>Movie Theaters</option>
+								<option value='Fantasy'>Fantasy</option>
+								<option value='Horror'>Horror</option>
+								<option value='Science Fiction'>Science Fiction</option>
+								<option value='Music Videos'>Music Videos</option>
+								<option value='Festivals'>Festivals</option>
+								<option value='Experimental'>Experimental</option>
+								<option value='Television'>Television</option>
+								<option value='Romance'>Romance</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select musicDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Music" class="subcat">
+								<option value="none" selected>MUSIC SUB CATEGORY</option>
+								<option value='Music'>Music</option>
+								<option value='Indie Rock'>Indie Rock</option>
+								<option value='Pop'>Pop</option>
+								<option value='Rock'>Rock</option>
+								<option value='Jazz'>Jazz</option>
+								<option value='Electronic Music'>Electronic Music</option>
+								<option value='Metal'>Metal</option>
+								<option value='Hip-Hop'>Hip-Hop</option>
+								<option value='World Music'>World Music</option>
+								<option value='Latin'>Latin</option>
+								<option value='Punk'>Punk</option>
+								<option value='Classical Music'>Classical Music</option>
+								<option value='Country & Folk'>Country & Folk</option>
+								<option value='RnB'>R&B</option>
+								<option value='Blues'>Blues</option>
+								<option value='Faith'>Faith</option>
+								<option value='Kids'>Kids</option>
+								<option value='Comedy'>Comedy</option>
+								<option value='Chiptune'>Chiptune</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select foodDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Food" class="subcat">
+								<option value="none" selected>FOOD SUB CATEGORY</option>
+								<option value='Restaurants'>Restaurants</option>
+								<option value='Food'>Food</option>
+								<option value='Drinks'>Drinks</option>
+								<option value='Food Trucks'>Food Trucks</option>
+								<option value='Cookbooks'>Cookbooks</option>
+								<option value='Vegan'>Vegan</option>
+								<option value='Events'>Events</option>
+								<option value='Spaces'>Spaces</option>
+								<option value='Small Batch'>Small Batch</option>
+								<option value='Community Gardens'>Community Gardens</option>
+								<option value='Farms'>Farms</option>
+								<option value='Farmer's Markets'>Farmer's Markets</option>
+								<option value='Bacon'>Bacon</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select designDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Design" class="subcat">
+								<option value="none" selected>DESIGN SUB CATEGORY</option>
+								<option value='Product Design'>Product Design</option>
+								<option value='Design'>Design</option>
+								<option value='Architecture'>Architecture</option>
+								<option value='Graphic Design'>Graphic Design</option>
+								<option value='Typography'>Typography</option>
+								<option value='Interactive Design'>Interactive Design</option>
+								<option value='Civic Design'>Civic Design</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select craftsDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Crafts" class="subcat">
+								<option value="none" selected>CRAFTS SUB CATEGORY</option>
+								<option value='Crafts'>Crafts</option>
+								<option value='DIY'>DIY</option>
+								<option value='Weaving'>Weaving</option>
+								<option value='Stationery'>Stationery</option>
+								<option value='Knitting'>Knitting</option>
+								<option value='Embroidery'>Embroidery</option>
+								<option value='Woodworking'>Woodworking</option>
+								<option value='Letterpress'>Letterpress</option>
+								<option value='Crochet'>Crochet</option>
+								<option value='Candles'>Candles</option>
+								<option value='Pottery'>Pottery</option>
+								<option value='Quilts'>Quilts</option>
+								<option value='Glass'>Glass</option>
+								<option value='Printing'>Printing</option>
+								<option value='Taxidermy'>Taxidermy</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select gamesDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Games" class="subcat">
+								<option value="none" selected>GAMES SUB CATEGORY</option>
+								<option value='Games'>Games</option>
+								<option value='Tabletop Games'>Tabletop Games</option>
+								<option value='Video Games'>Video Games</option>
+								<option value='Mobile Games'>Mobile Games</option>
+								<option value='Playing Cards'>Playing Cards</option>
+								<option value='Puzzles'>Puzzles</option>
+								<option value='Live Games'>Live Games</option>
+								<option value='Gaming Hardware'>Gaming Hardware</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select comicsDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Comics" class="subcat">
+								<option value="none" selected>COMICS SUB CATEGORY</option>
+								<option value='Comic Books'>Comic Books</option>
+								<option value='Comics'>Comics</option>
+								<option value='Anthologies'>Anthologies</option>
+								<option value='Graphic Novels'>Graphic Novels</option>
+								<option value='Webcomics'>Webcomics</option>
+								<option value='Events'>Events</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select fashionDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Fashion" class="subcat">
+								<option value="none" selected>FASHION SUB CATEGORY</option>
+								<option value='Fashion'>Fashion</option>
+								<option value='Childrenswear'>Childrenswear</option>
+								<option value='Accessories'>Accessories</option>
+								<option value='Ready to wear'>Ready-to-wear</option>
+								<option value='Apparel'>Apparel</option>
+								<option value='Jewelry'>Jewelry</option>
+								<option value='Footwear'>Footwear</option>
+								<option value='Couture'>Couture</option>
+								<option value='Pet Fashion'>Pet Fashion</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select theaterDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Theater" class="subcat">
+								<option value="none" selected>THEATER SUB CATEGORY</option>
+								<option value='Theater'>Theater</option>
+								<option value='Festivals'>Festivals</option>
+								<option value='Experimental'>Experimental</option>
+								<option value='Plays'>Plays</option>
+								<option value='Musical'>Musical</option>
+								<option value='Immersive'>Immersive</option>
+								<option value='Spaces'>Spaces</option>
+								<option value='Comedy'>Comedy</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select photoDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Photography" class="subcat">
+								<option value="none" selected>PHOTOGRAPHY SUB CATEGORY</option>
+								<option value='Photography'>Photography</option>
+								<option value='People'>People</option>
+								<option value='Photobooks'>Photobooks</option>
+								<option value='Fine Art'>Fine Art</option>
+								<option value='Animals'>Animals</option>
+								<option value='Places'>Places</option>
+								<option value='Nature'>Nature</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select techDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Technology" class="subcat">
+								<option value="none" selected>TECHNOLOGY SUB CATEGORY</option>
+								<option value='Hardware'>Hardware</option>
+								<option value='Software'>Software</option>
+								<option value='Gadgets'>Gadgets</option>
+								<option value='Web'>Web</option>
+								<option value='Apps'>Apps</option>
+								<option value='Technology'>Technology</option>
+								<option value='Flight'>Flight</option>
+								<option value='Makerspaces'>Makerspaces</option>
+								<option value='Fabrication Tools'>Fabrication Tools</option>
+								<option value='Sound'>Sound</option>
+								<option value='Wearables'>Wearables</option>
+								<option value='DIY Electronics'>DIY Electronics</option>
+								<option value='Camera Equipment'>Camera Equipment</option>
+								<option value='3D Printing'>3D Printing</option>
+								<option value='Space Exploration'>Space Exploration</option>
+								<option value='Robots'>Robots</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select danceDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Dance" class="subcat">
+								<option value="none" selected>DANCE SUB CATEGORY</option>
+								<option value='Dance'>Dance</option>
+								<option value='Performances'>Performances</option>
+								<option value='Spaces'>Spaces</option>
+								<option value='Workshops'>Workshops</option>
+								<option value='Residencies'>Residencies</option>
+							</select>
+						</div>
+						<div class="input-group-icon mt-10 form-select journalDiv" style="display:none">
+							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+							<select name="fSub_Journalism" class="subcat">
+								<option value="none" selected>JOURNALISM SUB CATEGORY</option>
+								<option value='Audio'>Audio</option>
+								<option value='Print'>Print</option>
+								<option value='Journalism'>Journalism</option>
+								<option value='Video'>Video</option>
+								<option value='Web'>Web</option>
+								<option value='Photo'>Photo</option>
+							</select>
+						</div>
+						<br><br>
+
+						<input type="submit" class="main_btn" value="Submit">
+					</form>
+
+					<br><br><br>
+
+
+				</div>
+			</div>
+		</section>
+			<!-- <br/> -->
+
+		
+
+        <!--================End Post Slider Area =================-->
+        
+		<!--================Footer Area =================-->
+		<footer class="footer_area p_120">
+			<div class="container">
+				<div class="text-faded text-center">
+					<div class="container">
+						<p>Copyright &copy; Crowdfund Inc. 2018</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--================End Footer Area =================-->
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="../static/js/jquery-3.2.1.min.js"></script>
+		<script type="text/javascript" src="../static/js/mach_learn.js"></script>
+		<script src="../static/js/popper.js"></script>
+        <script src="../static/js/bootstrap.min.js"></script>
+        <script src="../static/js/stellar.js"></script>
+        <script src="../static/vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="../static/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="../static/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="../static/vendors/isotope/isotope-min.js"></script>
+        <script src="../static/vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="../static/vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+        <script src="../static/js/mail-script.js"></script>
+        <script src="../static/vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="../static/vendors/counter-up/jquery.counterup.js"></script>
+		<script src="../static/js/theme.js"></script>
+		
+    </body>
+</html>
