@@ -2496,17 +2496,13 @@ h6 {
   line-height: 48px;
   border-radius: 5px;
   outline: none !important;
-  box-shadow: none !important;
+  box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
   text-align: center;
   border: 1px solid #dddddd;
   cursor: pointer;
   transition: color 0ms linear; }
   .main_btn2:hover {
-    background-image: -moz-linear-gradient(0deg, #bc2bff 0%, #7249fb 100%);
-    background-image: -webkit-linear-gradient(0deg, #bc2bff 0%, #7249fb 100%);
-    background-image: -ms-linear-gradient(0deg, #bc2bff 0%, #7249fb 100%);
-    box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
-    color: #fff; }
+    box-shadow: none; }
 
 .submit_btn {
   width: auto;
