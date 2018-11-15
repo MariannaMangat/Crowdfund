@@ -8,7 +8,6 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 
 def machine_learning(user_list):
-    print('here')
     loaded_model = pickle.load(open('kickstarter_model.sav', 'rb'))
-    prediction = loaded_model.predict(user_list)
+    prediction = loaded_model.predict_proba(user_list)[:,1]
     return prediction

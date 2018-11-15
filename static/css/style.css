@@ -74,12 +74,23 @@ button:focus {
   outline: none;
   box-shadow: none; }
 
-.p_120 {
+.pt_120 {
   padding-top: 120px;
-  padding-bottom: 120px; }
+  /* padding-bottom: 120px;  */
+}
+
+.p_50 {
+  padding-top: 50px;
+  padding-bottom: 50px; 
+}
+
+.p_30 {
+  padding-top: 30px;
+  padding-bottom: 30px; 
+}
 
 .pad_top {
-  padding-top: 120px; }
+  padding-top: 100px; }
 
 .mt-25 {
   margin-top: 25px; }
@@ -98,6 +109,15 @@ button:focus {
     margin: auto; } }
 /* Main Title Area css
 ============================================================================================ */
+.analysis-area{
+  font-size: 36px;
+  line-height: 45px;
+  color: #222222;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 .main_title {
   text-align: center;
   margin-bottom: 75px; }
@@ -114,7 +134,7 @@ button:focus {
     line-height: 26px;
     color: #777777;
     margin-bottom: 0px;
-    max-width: 690px;
+    max-width: 800px;
     font-weight: normal;
     margin: auto; }
   .main_title.white h2 {
@@ -142,7 +162,7 @@ button:focus {
     .header_area .navbar .nav .nav-item {
       margin-right: 45px; }
       .header_area .navbar .nav .nav-item .nav-link {
-        font: 500 12px/100px "Roboto", sans-serif;
+        font: 500 13px/100px "Roboto", sans-serif;
         text-transform: uppercase;
         color: #fff;
         padding: 0px;
@@ -268,10 +288,13 @@ button:focus {
 .home_banner_area {
   z-index: 1;
   background: url(../img/banner/home-banner.jpeg) no-repeat scroll center center;
-  background-size: cover; }
+  background-size: cover; 
+  height: 1000px;
+  }
   .home_banner_area .banner_inner {
     overflow: hidden;
     width: 100%;
+    height: 150%;
     padding: 200px 0px 200px 0px; }
     .home_banner_area .banner_inner .banner_content {
       color: #fff; }
@@ -285,14 +308,14 @@ button:focus {
         line-height: 60px;
         text-transform: uppercase;
         margin-bottom: 15px; }
-      .home_banner_area .banner_inner .banner_content p {
+      .home_banner_area .banner_inner .banner_content h4 {
         color: #fff;
         font-family: "Roboto", sans-serif;
         font-weight: normal;
-        max-width: 565px;
+        max-width: 520px;
         margin-bottom: 40px;
         line-height: 26px;
-        font-size: 16px; }
+        font-size: 20px; }
       .home_banner_area .banner_inner .banner_content .banner_map_img {
         text-align: right; }
 
@@ -2466,43 +2489,43 @@ h6 {
 /* Main Button Area css
 ============================================================================================ */
 .main_btn {
-  padding: 0px 40px;
-  background: #a7cb00;
-  z-index: 2;
-  display: inline-block;
-  transition: all 400ms linear;
-  text-align: center;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: "Roboto", sans-serif;
-  line-height: 48px;
-  border: 1px solid #a7cb00;
-  border-radius: 5px;
-  transition: all 300ms linear 0s;
-  box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3); }
-  .main_btn:hover {
+    padding: 0px 40px;
+    background: #a7cb00;
+    z-index: 2;
+    display: inline-block;
+    transition: all 400ms linear;
+    text-align: center;
     color: #fff;
-    box-shadow: none; }
+    font-size: 14px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    line-height: 48px;
+    border: 1px solid #a7cb00;
+    border-radius: 5px;
+    transition: all 300ms linear 0s;
+    box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3); }
+    .main_btn:hover {
+      color: #fff;
+      box-shadow: none; }
 
 .main_btn2 {
-  display: inline-block;
-  background: #f9f9ff;
-  padding: 0px 45px;
-  color: #222222;
-  font-family: "Heebo", sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 48px;
-  border-radius: 5px;
-  outline: none !important;
-  box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
-  text-align: center;
-  border: 1px solid #dddddd;
-  cursor: pointer;
-  transition: color 0ms linear; }
-  .main_btn2:hover {
-    box-shadow: none; }
+    display: inline-block;
+    background: #f9f9ff;
+    padding: 0px 45px;
+    color: #222222;
+    font-family: "Heebo", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 48px;
+    border-radius: 5px;
+    outline: none !important;
+    box-shadow: 0px 10px 30px 0px rgba(115, 73, 251, 0.3);
+    text-align: center;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    transition: color 0ms linear; }
+    .main_btn2:hover {
+        box-shadow: none; }
 
 .submit_btn {
   width: auto;
@@ -2626,11 +2649,15 @@ h6 {
 ============================================================================================ */
 /* Design Area css
 ============================================================================================ */
+.design_area {
+  height: 800px;
+}
+
 .design_inner .col-lg-7 {
   vertical-align: middle;
   align-self: center; }
 .design_inner .design_left_text {
-  margin-left: 195px;
+  margin-left: 50px;
   max-width: 380px; }
   .design_inner .design_left_text h6 {
     font-size: 21px;
@@ -2641,6 +2668,18 @@ h6 {
   .design_inner .design_left_text h2 {
     font-size: 36px;
     line-height: 45px;
+    color: #222222;
+    text-transform: uppercase;
+    margin-bottom: 30px; }
+  .design_inner .design_left_text h3 {
+    font-size: 35px;
+    line-height: 40px;
+    color: #222222;
+    text-transform: uppercase;
+    margin-bottom: 30px; }
+  .design_inner .design_left_text h4 {
+    font-size: 25px;
+    line-height: 20px;
     color: #222222;
     text-transform: uppercase;
     margin-bottom: 30px; }
@@ -2794,11 +2833,8 @@ h6 {
 ============================================================================================ */
 .center_form{
   margin: 0 auto;
-  width: 50%;
+  width: 100%;
 }
-
-
-
 .post_s_item {
   position: relative;
   overflow: hidden; }
@@ -2863,8 +2899,23 @@ h6 {
 ============================================================================================ */
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
+/* About Us Area css
+============================================================================================ */
+.kick-indie3-img {
+  height: 50%;
+  width: 50%;
+}
+
+/* End About Us Area css
+============================================================================================ */
+
+/*---------------------------------------------------- */
+/*----------------------------------------------------*/
 /* Footer Area css
 ============================================================================================ */
+footer {
+  background-color: black; }
+
 .footer_area {
   background: #000410; }
 

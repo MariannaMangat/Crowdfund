@@ -19,6 +19,7 @@
 		<link rel="stylesheet" href="../static/css/responsive.css">
 		<script src="https://d3js.org/d3.v4.min.js"></script>
 
+		<link rel="stylesheet" href="../static/css/ml.css">
 		
     </head>
     <body>
@@ -82,11 +83,11 @@
 					
 					<form id="asdf" onsubmit="return false" action="api/compute" method="POST">
 						<div class="mt-10">
-							<input type="text" name="fGoal" placeholder="Funding Goal ($)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Funding Goal ($)'"
+							<input id="goal_input" type="text" name="fGoal" placeholder="Funding Goal ($)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Funding Goal ($)'"
 							required class="single-input">
 						</div>
 						<div class="mt-10">
-							<input type="text" name="fBacker" placeholder="Number of Backers" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Funding Goal ($)'"
+							<input id="backer_input" type="text" name="fBacker" placeholder="Number of Backers" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Number of Backers'"
 							required class="single-input">
 						</div>
 
@@ -112,8 +113,8 @@
 							</select>
 						</div>
 
-						<div class="input-group-icon mt-10 form-select artDiv" style="display:none">
-							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
+						<div class="input-group-icon mt-10 form-select artDiv hidden" >
+						<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Art" class="subcat">
 								<option value="none" selected>ART SUB CATEGORY</option>
 								<option value="Public Art">Public Art</option>
@@ -131,7 +132,7 @@
 								<option value="Video Art">Video Art</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select publishDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select publishDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>	
 							<select name="fSub_Publishing" class="subcat">
 								<option value="none" selected>PUBLISHING SUB CATEGORY</option>
@@ -155,7 +156,7 @@
 								<option value="Letterpress">Letterpress</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select filmDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select filmDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Film" class="subcat">   
 								<option value="none" selected>FILM SUB CATEGORY</option>
@@ -181,7 +182,7 @@
 								<option value='Romance'>Romance</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select musicDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select musicDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Music" class="subcat">
 								<option value="none" selected>MUSIC SUB CATEGORY</option>
@@ -206,7 +207,7 @@
 								<option value='Chiptune'>Chiptune</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select foodDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select foodDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Food" class="subcat">
 								<option value="none" selected>FOOD SUB CATEGORY</option>
@@ -225,7 +226,7 @@
 								<option value='Bacon'>Bacon</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select designDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select designDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Design" class="subcat">
 								<option value="none" selected>DESIGN SUB CATEGORY</option>
@@ -238,7 +239,7 @@
 								<option value='Civic Design'>Civic Design</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select craftsDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select craftsDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Crafts" class="subcat">
 								<option value="none" selected>CRAFTS SUB CATEGORY</option>
@@ -259,7 +260,7 @@
 								<option value='Taxidermy'>Taxidermy</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select gamesDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select gamesDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Games" class="subcat">
 								<option value="none" selected>GAMES SUB CATEGORY</option>
@@ -273,7 +274,7 @@
 								<option value='Gaming Hardware'>Gaming Hardware</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select comicsDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select comicsDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Comics" class="subcat">
 								<option value="none" selected>COMICS SUB CATEGORY</option>
@@ -285,7 +286,7 @@
 								<option value='Events'>Events</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select fashionDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select fashionDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Fashion" class="subcat">
 								<option value="none" selected>FASHION SUB CATEGORY</option>
@@ -300,7 +301,7 @@
 								<option value='Pet Fashion'>Pet Fashion</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select theaterDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select theaterDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Theater" class="subcat">
 								<option value="none" selected>THEATER SUB CATEGORY</option>
@@ -314,7 +315,7 @@
 								<option value='Comedy'>Comedy</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select photoDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select photoDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Photography" class="subcat">
 								<option value="none" selected>PHOTOGRAPHY SUB CATEGORY</option>
@@ -327,7 +328,7 @@
 								<option value='Nature'>Nature</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select techDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select techDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Technology" class="subcat">
 								<option value="none" selected>TECHNOLOGY SUB CATEGORY</option>
@@ -349,7 +350,7 @@
 								<option value='Robots'>Robots</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select danceDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select danceDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Dance" class="subcat">
 								<option value="none" selected>DANCE SUB CATEGORY</option>
@@ -360,7 +361,7 @@
 								<option value='Residencies'>Residencies</option>
 							</select>
 						</div>
-						<div class="input-group-icon mt-10 form-select journalDiv" style="display:none">
+						<div class="input-group-icon mt-10 form-select journalDiv hidden" >
 							<div class="icon"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></div>
 							<select name="fSub_Journalism" class="subcat">
 								<option value="none" selected>JOURNALISM SUB CATEGORY</option>
@@ -374,11 +375,16 @@
 						</div>
 						<br><br>
 
-						<input type="submit" class="main_btn" value="Submit">
+						<input type="submit" class="main_btn" value="Submit"> <input id="reset" type="button" class="main_btn2" value="Reset">
 					</form>
 
-					<br><br><br>
+					<br><br>
 
+					<div class="result_container">
+						<div id="result" class="hidden result_display"></div>
+					</div>
+					
+					<br><br>
 
 				</div>
 			</div>

@@ -8,7 +8,7 @@
 
 .result_display {
     padding: 1rem;
-    background: tomato;
+    background: rgb(71, 135, 255);
     border-radius: 5px;
     color: white;
 }
